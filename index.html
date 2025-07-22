@@ -6,7 +6,6 @@
     <title>Access Denied | ScriptBlox</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap');
-
         :root {
             --primary-color: #00ffff; /* Cyan */
             --secondary-color: #ff00ff; /* Magenta */
@@ -14,13 +13,7 @@
             --text-color: #e0e0e0;
             --container-bg: rgba(10, 10, 25, 0.7);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             background-color: var(--background-color);
             color: var(--text-color);
@@ -32,16 +25,7 @@
             overflow: hidden;
             text-align: center;
         }
-
-        #particle-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
+        #particle-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
         .container {
             position: relative;
             z-index: 1;
@@ -56,12 +40,7 @@
             width: 700px;
             animation: fadeIn 1s ease-out;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
         .header {
             font-family: 'Orbitron', sans-serif;
             color: var(--primary-color);
@@ -70,7 +49,6 @@
             letter-spacing: 2px;
             text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color);
         }
-
         .glitch-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 3rem;
@@ -80,16 +58,9 @@
             margin-bottom: 1.5rem;
             position: relative;
             animation: glitch 2.5s infinite;
-            text-shadow:
-                0 0 5px var(--primary-color),
-                0 0 10px var(--primary-color),
-                0 0 20px var(--primary-color),
-                0 0 40px var(--secondary-color),
-                0 0 80px var(--secondary-color);
+            text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 40px var(--secondary-color), 0 0 80px var(--secondary-color);
         }
-
-        .glitch-title::before,
-        .glitch-title::after {
+        .glitch-title::before, .glitch-title::after {
             content: 'ACCESS DENIED';
             position: absolute;
             top: 0;
@@ -99,137 +70,20 @@
             background: var(--container-bg);
             overflow: hidden;
         }
-
-        .glitch-title::before {
-            left: 2px;
-            text-shadow: -2px 0 var(--secondary-color);
-            animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
-        }
-
-        .glitch-title::after {
-            left: -2px;
-            text-shadow: -2px 0 var(--primary-color), 2px 2px var(--secondary-color);
-            animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch {
-            0% { transform: translate(0); }
-            20% { transform: translate(-3px, 3px); }
-            40% { transform: translate(-3px, -3px); }
-            60% { transform: translate(3px, 3px); }
-            80% { transform: translate(3px, -3px); }
-            100% { transform: translate(0); }
-        }
-
-        @keyframes glitch-anim-1 {
-            0% { clip: rect(132px, 9999px, 100px, 0); }
-            5% { clip: rect(33px, 9999px, 92px, 0); }
-            10% { clip: rect(118px, 9999px, 114px, 0); }
-            15% { clip: rect(122px, 9999px, 111px, 0); }
-            20% { clip: rect(104px, 9999px, 83px, 0); }
-            25% { clip: rect(25px, 9999px, 53px, 0); }
-            30% { clip: rect(123px, 9999px, 11px, 0); }
-            35% { clip: rect(65px, 9999px, 34px, 0); }
-            40% { clip: rect(43px, 9999px, 99px, 0); }
-            45% { clip: rect(116px, 9999px, 14px, 0); }
-            50% { clip: rect(138px, 9999px, 98px, 0); }
-            55% { clip: rect(11px, 9999px, 118px, 0); }
-            60% { clip: rect(9px, 9999px, 119px, 0); }
-            65% { clip: rect(14px, 9999px, 9px, 0); }
-            70% { clip: rect(51px, 9999px, 97px, 0); }
-            75% { clip: rect(13px, 9999px, 5px, 0); }
-            80% { clip: rect(44px, 9999px, 103px, 0); }
-            85% { clip: rect(123px, 9999px, 89px, 0); }
-            90% { clip: rect(127px, 9999px, 131px, 0); }
-            95% { clip: rect(20px, 9999px, 79px, 0); }
-            100% { clip: rect(21px, 9999px, 122px, 0); }
-        }
-
-        @keyframes glitch-anim-2 {
-            0% { clip: rect(98px, 9999px, 50px, 0); }
-            5% { clip: rect(79px, 9999px, 131px, 0); }
-            10% { clip: rect(10px, 9999px, 137px, 0); }
-            15% { clip: rect(132px, 9999px, 98px, 0); }
-            20% { clip: rect(144px, 9999px, 93px, 0); }
-            25% { clip: rect(15px, 9999px, 63px, 0); }
-            30% { clip: rect(66px, 9999px, 127px, 0); }
-            35% { clip: rect(149px, 9999px, 120px, 0); }
-            40% { clip: rect(12px, 9999px, 2px, 0); }
-            45% { clip: rect(49px, 9999px, 57px, 0); }
-            50% { clip: rect(10px, 9999px, 149px, 0); }
-            55% { clip: rect(13px, 9999px, 126px, 0); }
-            60% { clip: rect(147px, 9999px, 67px, 0); }
-            65% { clip: rect(104px, 9999px, 80px, 0); }
-            70% { clip: rect(106px, 9999px, 55px, 0); }
-            75% { clip: rect(144px, 9999px, 39px, 0); }
-            80% { clip: rect(125px, 9999px, 31px, 0); }
-            85% { clip: rect(133px, 9999px, 73px, 0); }
-            90% { clip: rect(117px, 9999px, 5px, 0); }
-            95% { clip: rect(118px, 9999px, 144px, 0); }
-            100% { clip: rect(10px, 9999px, 95px, 0); }
-        }
-
-        .message {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .message strong {
-            color: white;
-            font-weight: 400;
-        }
-
-        .details {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 1rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            line-height: 1.8;
-            word-break: break-all;
-        }
-
-        .details p {
-            margin: 0.5rem 0;
-        }
-
-        .details span {
-            color: var(--primary-color);
-        }
-
-        .footer {
-            margin-top: 2rem;
-            font-size: 0.8rem;
-        }
-
-        .footer a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--secondary-color);
-            transition: color 0.3s, text-shadow 0.3s;
-        }
-
-        .footer a:hover {
-            color: white;
-            text-shadow: 0 0 5px var(--secondary-color);
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem;
-            }
-            .header {
-                font-size: 1.5rem;
-            }
-            .glitch-title {
-                font-size: 2rem;
-            }
-            .message {
-                font-size: 0.9rem;
-            }
-        }
-
+        .glitch-title::before { left: 2px; text-shadow: -2px 0 var(--secondary-color); animation: glitch-anim-1 2.5s infinite linear alternate-reverse; }
+        .glitch-title::after { left: -2px; text-shadow: -2px 0 var(--primary-color), 2px 2px var(--secondary-color); animation: glitch-anim-2 2.5s infinite linear alternate-reverse; }
+        @keyframes glitch { 0% { transform: translate(0); } 20% { transform: translate(-3px, 3px); } 40% { transform: translate(-3px, -3px); } 60% { transform: translate(3px, 3px); } 80% { transform: translate(3px, -3px); } 100% { transform: translate(0); } }
+        @keyframes glitch-anim-1 { 0% { clip: rect(132px, 9999px, 100px, 0); } 5% { clip: rect(33px, 9999px, 92px, 0); } 10% { clip: rect(118px, 9999px, 114px, 0); } 15% { clip: rect(122px, 9999px, 111px, 0); } 20% { clip: rect(104px, 9999px, 83px, 0); } 25% { clip: rect(25px, 9999px, 53px, 0); } 30% { clip: rect(123px, 9999px, 11px, 0); } 35% { clip: rect(65px, 9999px, 34px, 0); } 40% { clip: rect(43px, 9999px, 99px, 0); } 45% { clip: rect(116px, 9999px, 14px, 0); } 50% { clip: rect(138px, 9999px, 98px, 0); } 55% { clip: rect(11px, 9999px, 118px, 0); } 60% { clip: rect(9px, 9999px, 119px, 0); } 65% { clip: rect(14px, 9999px, 9px, 0); } 70% { clip: rect(51px, 9999px, 97px, 0); } 75% { clip: rect(13px, 9999px, 5px, 0); } 80% { clip: rect(44px, 9999px, 103px, 0); } 85% { clip: rect(123px, 9999px, 89px, 0); } 90% { clip: rect(127px, 9999px, 131px, 0); } 95% { clip: rect(20px, 9999px, 79px, 0); } 100% { clip: rect(21px, 9999px, 122px, 0); } }
+        @keyframes glitch-anim-2 { 0% { clip: rect(98px, 9999px, 50px, 0); } 5% { clip: rect(79px, 9999px, 131px, 0); } 10% { clip: rect(10px, 9999px, 137px, 0); } 15% { clip: rect(132px, 9999px, 98px, 0); } 20% { clip: rect(144px, 9999px, 93px, 0); } 25% { clip: rect(15px, 9999px, 63px, 0); } 30% { clip: rect(66px, 9999px, 127px, 0); } 35% { clip: rect(149px, 9999px, 120px, 0); } 40% { clip: rect(12px, 9999px, 2px, 0); } 45% { clip: rect(49px, 9999px, 57px, 0); } 50% { clip: rect(10px, 9999px, 149px, 0); } 55% { clip: rect(13px, 9999px, 126px, 0); } 60% { clip: rect(147px, 9999px, 67px, 0); } 65% { clip: rect(104px, 9999px, 80px, 0); } 70% { clip: rect(106px, 9999px, 55px, 0); } 75% { clip: rect(144px, 9999px, 39px, 0); } 80% { clip: rect(125px, 9999px, 31px, 0); } 85% { clip: rect(133px, 9999px, 73px, 0); } 90% { clip: rect(117px, 9999px, 5px, 0); } 95% { clip: rect(118px, 9999px, 144px, 0); } 100% { clip: rect(10px, 9999px, 95px, 0); } }
+        .message { font-size: 1rem; line-height: 1.6; margin-bottom: 2rem; }
+        .message strong { color: white; font-weight: 400; }
+        .details { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 8px; font-size: 0.8rem; line-height: 1.8; word-break: break-all; }
+        .details p { margin: 0.5rem 0; }
+        .details span { color: var(--primary-color); }
+        .footer { margin-top: 2rem; font-size: 0.8rem; }
+        .footer a { color: var(--secondary-color); text-decoration: none; border-bottom: 1px dotted var(--secondary-color); transition: color 0.3s, text-shadow 0.3s; }
+        .footer a:hover { color: white; text-shadow: 0 0 5px var(--secondary-color); }
+        @media (max-width: 768px) { .container { padding: 1.5rem; } .header { font-size: 1.5rem; } .glitch-title { font-size: 2rem; } .message { font-size: 0.9rem; } }
     </style>
 </head>
 <body role="document">
@@ -244,9 +98,9 @@
 
         <div class="details">
             <p><strong>Reason:</strong> Not open to public access.</p>
-            <p><strong>Your IP:</strong> <span>::YOUR_IP_ADDRESS::</span></p>
-            <p><strong>Cloudflare Ray ID:</strong> <span>::CLOUDFLARE_RAY_ID::</span></p>
-            <p><strong>Timestamp:</strong> <span>::TIMESTAMP::</span></p>
+            <p><strong>Your IP:</strong> <span>::CLIENT_IP::</span></p>
+            <p><strong>Cloudflare Ray ID:</strong> <span>::RAY_ID::</span></p>
+            <p><strong>Timestamp:</strong> <span id="timestamp"></span></p>
         </div>
 
         <div class="footer">
@@ -255,121 +109,61 @@
     </main>
 
     <script>
+        // --- Particle Animation Script (Unchanged) ---
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
-
         let particlesArray;
-
         function setCanvasSize() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
-
         class Particle {
-            constructor(x, y, directionX, directionY, size, color) {
-                this.x = x;
-                this.y = y;
-                this.directionX = directionX;
-                this.directionY = directionY;
-                this.size = size;
-                this.color = color;
-            }
-
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                ctx.fillStyle = this.color;
-                ctx.fill();
-            }
-
+            constructor(x, y, directionX, directionY, size, color) { this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY; this.size = size; this.color = color; }
+            draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false); ctx.fillStyle = this.color; ctx.fill(); }
             update() {
-                if (this.x > canvas.width || this.x < 0) {
-                    this.directionX = -this.directionX;
-                }
-                if (this.y > canvas.height || this.y < 0) {
-                    this.directionY = -this.directionY;
-                }
-                this.x += this.directionX;
-                this.y += this.directionY;
-                this.draw();
+                if (this.x > canvas.width || this.x < 0) { this.directionX = -this.directionX; }
+                if (this.y > canvas.height || this.y < 0) { this.directionY = -this.directionY; }
+                this.x += this.directionX; this.y += this.directionY; this.draw();
             }
         }
-
         function init() {
             setCanvasSize();
             particlesArray = [];
             const numberOfParticles = (canvas.height * canvas.width) / 9000;
             const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
-            
             for (let i = 0; i < numberOfParticles; i++) {
                 const size = Math.random() * 2 + 1;
                 const x = Math.random() * (innerWidth - size * 2) + size;
                 const y = Math.random() * (innerHeight - size * 2) + size;
                 const directionX = (Math.random() - 0.5) * 0.5;
                 const directionY = (Math.random() - 0.5) * 0.5;
-                const color = primaryColor;
-                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, primaryColor));
             }
         }
-
         function connect() {
             let opacityValue = 1;
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a; b < particlesArray.length; b++) {
-                    const distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
-                                   ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                    
+                    const distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
                     if (distance < (canvas.width / 7) * (canvas.height / 7)) {
                         opacityValue = 1 - (distance / 20000);
                         const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
                         ctx.strokeStyle = `rgba(${parseInt(primaryColor.slice(1,3), 16)}, ${parseInt(primaryColor.slice(3,5), 16)}, ${parseInt(primaryColor.slice(5,7), 16)}, ${opacityValue})`;
                         ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                        ctx.stroke();
+                        ctx.beginPath(); ctx.moveTo(particlesArray[a].x, particlesArray[a].y); ctx.lineTo(particlesArray[b].x, particlesArray[b].y); ctx.stroke();
                     }
                 }
             }
         }
-
-        function animate() {
-            requestAnimationFrame(animate);
-            ctx.clearRect(0, 0, innerWidth, innerHeight);
-
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-            }
-            connect();
-        }
-
-        window.addEventListener('resize', () => {
-            init();
-        });
-
-        // Replace placeholders on load for demonstration
-        function fillPlaceholders() {
-            // In a real Cloudflare environment, these placeholders are replaced server-side.
-            // This is just for local demonstration.
-            const ipElement = document.querySelector('.details span:nth-of-type(1)');
-            if (ipElement.textContent === '::YOUR_IP_ADDRESS::') {
-                ipElement.textContent = 'Could not retrieve IP address';
-            }
-            
-            const rayElement = document.querySelector('.details span:nth-of-type(2)');
-            if (rayElement.textContent === '::CLOUDFLARE_RAY_ID::') {
-                 rayElement.textContent = (Math.random().toString(16) + '0000000000000').substr(2, 16);
-            }
-
-            const timeElement = document.querySelector('.details span:nth-of-type(3)');
-            if(timeElement.textContent === '::TIMESTAMP::') {
-                timeElement.textContent = new Date().toUTCString();
-            }
-        }
-
+        function animate() { requestAnimationFrame(animate); ctx.clearRect(0, 0, innerWidth, innerHeight); for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); } connect(); }
+        window.addEventListener('resize', () => { init(); });
         init();
         animate();
-        fillPlaceholders();
+        // --- END Particle Script ---
+
+        // --- NEW Timestamp Script ---
+        // This runs in the user's browser to show the current time.
+        document.getElementById('timestamp').textContent = new Date().toUTCString();
 
     </script>
 </body>
